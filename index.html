@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Casino Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Header / Status Bar -->
+        <header id="game-header">
+            <div class="logo">BLACKJACK EXCLUSIVE</div>
+            <div class="deck-info">Baralhos: <span id="deck-count">6</span> | <span id="deck-warning"
+                    class="hidden">Embaralhando!</span></div>
+            <div class="balance-container">SALDO: $<span id="balance">2500</span></div>
+        </header>
+
+        <!-- Main Casino Table -->
+        <main id="casino-table">
+            <!-- Dealer Hand -->
+            <div class="hand-container dealer-area">
+                <div class="hand-label">DEALER</div>
+                <div id="dealer-hand" class="cards-layout"></div>
+                <div id="dealer-score" class="score-badge hidden">0</div>
+            </div>
+
+            <!-- Table Message Center -->
+            <div id="message-container">
+                <h2 id="table-message">FAÇA SUA APOSTA</h2>
+            </div>
+
+            <!-- Player Hand(s) -->
+            <div id="player-hands-container">
+                <div class="hand-container player-area active-hand">
+                    <div id="player-score" class="score-badge hidden">0</div>
+                    <div id="player-cards" class="cards-layout"></div>
+                    <div class="bet-stack" id="main-bet-stack"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Dynamic Controls -->
+        <footer id="game-controls">
+            <!-- Betting Controls -->
+            <div id="betting-controls" class="control-group">
+                <div class="chips-selector">
+                    <div class="chip chip-5" data-value="5">5</div>
+                    <div class="chip chip-25" data-value="25">25</div>
+                    <div class="chip chip-100" data-value="100">100</div>
+                    <div class="chip chip-500" data-value="500">500</div>
+                </div>
+                <div class="action-buttons">
+                    <button id="clear-bet" class="btn secondary">LIMPAR</button>
+                    <button id="deal-cards" class="btn primary disabled">DISTRIBUIR</button>
+                </div>
+                <div class="current-bet-display">APOSTA: $<span id="current-bet">0</span></div>
+            </div>
+
+            <!-- Game Actions (Hit, Stand, etc) - Hidden initially -->
+            <div id="play-controls" class="control-group hidden">
+                <button id="hit" class="btn primary">HIT</button>
+                <button id="stand" class="btn primary">STAND</button>
+                <button id="double" class="btn primary">DOUBLE</button>
+                <button id="split" class="btn primary hidden">SPLIT</button>
+            </div>
+        </footer>
+
+        <!-- Overlays -->
+        <div id="shuffle-overlay" class="overlay hidden">
+            <div class="shuffle-animation">
+                <h1>Embaralhando o Monte...</h1>
+                <div class="cards-shuffle-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
