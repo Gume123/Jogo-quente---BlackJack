@@ -161,6 +161,10 @@ body {
     transform: rotateY(180deg);
 }
 
+.card.hidden-card .card-face {
+    visibility: hidden;
+}
+
 .card-value-top {
     position: absolute;
     top: 5px;
